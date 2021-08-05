@@ -4,7 +4,7 @@ import { useCharacters } from '../../state/char';
 
 const CharacterList = () => {
   const [page, setPage] = useState(1);
-  const { characters, loading } = useCharacters;
+  const { characters, loading } = useCharacters();
   if (loading)
     return (
       <img

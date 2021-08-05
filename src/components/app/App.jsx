@@ -1,5 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+
+import CharacterList from '../characters/CharacterList';
 import styles from './styles.css';
 
 export default function App() {
@@ -7,7 +9,7 @@ export default function App() {
     <>
       <header styles={styles}>This is a headeR</header>
       <Switch>
-        <h1>Hello World</h1>
+        <Route exact path="/" component={CharacterList} />
       </Switch>
     </>
   );
