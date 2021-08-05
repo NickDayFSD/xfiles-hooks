@@ -33,7 +33,7 @@ const CharacterList = () => {
       </button>
       {page}
       <button onClick={() => setPage((prevPage) => prevPage + 1)}>&gt;</button>
-      <ul>{characterElements}</ul>
+      <ul data-testid="charList">{characterElements}</ul>
     </>
   );
 };
