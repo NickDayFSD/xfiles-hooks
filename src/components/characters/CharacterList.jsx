@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCharacters } from '../../state/char';
+import Character from './Character';
 
 const CharacterList = () => {
   const [page, setPage] = useState(1);
-  const { characters, loading } = useCharacters();
+  const { characters, loading } = useCharacters(page);
+
   if (loading)
     return (
       <img
@@ -14,9 +16,9 @@ const CharacterList = () => {
     );
 
   const characterElements = characters.map((character) => (
-    <li key={character.id}>
-      <Link to={`/${character.id}`}>
-        <p>Character Here</p>
+    <li key={character._id}>
+      <Link to={`/${character._id}`}>
+        <Character {...character} />
       </Link>
     </li>
   ));
